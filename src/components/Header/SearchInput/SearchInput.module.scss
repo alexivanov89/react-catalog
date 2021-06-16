@@ -1,0 +1,31 @@
+@import '../../../styles/styles.scss';
+
+.searchInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    height: 40px;
+}
+
+.icon {
+    position: absolute;
+}
+
+.input {
+    max-width: 300px;
+    height: 40px;
+    padding: 8px 0 8px 32px;
+    border: none;
+    font-size: 14px;
+    color: #323232;
+    outline: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.1s ease-out;
+    &:focus {
+        border-color: #e97f03;
+    }
+    &:focus + .icon {
+        fill: #e97f03;
+    }
+}

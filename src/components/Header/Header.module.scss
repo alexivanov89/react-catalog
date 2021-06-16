@@ -1,0 +1,9 @@
+@import '../../styles/styles.scss';
+
+.header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 24px;
+}

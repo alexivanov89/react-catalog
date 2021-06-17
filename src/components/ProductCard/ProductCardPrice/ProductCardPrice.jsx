@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styles from './ProductCardPrice.module.scss';
 
-export default class ProductCardPrice extends Component {
-    render() {
-        return (
-            <>
-                <div className={styles.product_price}>${this.props.price.value}</div>
-            </>
-        );
-    }
-}
+const ProductCardPrice = ({ price }) => {
+    return (
+        <>
+            <div className={styles.product_price}>${price.value}</div>
+        </>
+    );
+};
+
+export default ProductCardPrice;

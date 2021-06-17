@@ -1,64 +1,53 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import ProductCard from '../../components/ProductCard';
 
 import styles from './ListProductsPage.module.scss';
 
-export default class ListProductsPage extends Component {
-    state = {
-        products: null,
-    };
+const ListProductsPage = () => {
+    const [products, setProducts] = useState(null);
 
-    componentDidMount(prop, state) {
-        this.getData();
-        console.log('componentDidMount');
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        console.log('componentDidUpdate');
-    }
-
-    getData = async () => {
+    const getData = async () => {
         try {
             const res = await fetch('http://localhost:3006/item');
             const data = await res.json();
             const products = data.content;
-            this.setState({
-                products: products,
-            });
+            setProducts(products);
         } catch (e) {
-            console.log('ERRR', e);
+            console.log('ERROR', e);
         }
     };
 
-    render() {
-        const { products } = this.state;
-        console.log(products);
-        return (
-            <>
-                <Header />
-                <main>
-                    <div className={styles.products}>
-                        {!!products ? (
-                            products.map(({ description, id, like, name, picture, price }) => {
-                                return (
-                                    <ProductCard
-                                        key={id}
-                                        description={description}
-                                        id={id}
-                                        like={like}
-                                        name={name}
-                                        picture={picture}
-                                        price={price}
-                                    />
-                                );
-                            })
-                        ) : (
-                            <div>Loading...</div>
-                        )}
-                    </div>
-                </main>
-            </>
-        );
-    }
-}
+    useEffect(() => {
+        getData();
+    }, []);
+
+    return (
+        <>
+            <Header />
+            <main>
+                <div className={styles.products}>
+                    {!!products ? (
+                        products.map(({ description, id, like, name, picture, price }) => {
+                            return (
+                                <ProductCard
+                                    key={id}
+                                    description={description}
+                                    id={id}
+                                    like={like}
+                                    name={name}
+                                    picture={picture}
+                                    price={price}
+                                />
+                            );
+                        })
+                    ) : (
+                        <div>Loading...</div>
+                    )}
+                </div>
+            </main>
+        </>
+    );
+};
+
+export default ListProductsPage;

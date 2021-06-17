@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styles from './ProductCardTitle.module.scss';
 
-export default class ProductCardTitle extends Component {
-    render() {
-        return (
-            <>
-                <div className={styles.product_title}>{this.props.name}</div>
-            </>
-        );
-    }
-}
+const ProductCardTitle = ({ name }) => {
+    return (
+        <>
+            <div className={styles.product_title}>{name}</div>
+        </>
+    );
+};
+
+export default ProductCardTitle;

@@ -12,12 +12,6 @@ const routesConfig = [
         exact: true,
         component: DetailProductsPage,
     },
-    /*
-    TODO {
-        path: '*',
-        exact: false,
-        component: NotFoundPage,
-    }, */
 ];
 
 export default routesConfig;

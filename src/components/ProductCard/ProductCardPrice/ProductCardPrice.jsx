@@ -1,11 +1,11 @@
 import React from 'react';
-
+import cn from 'classnames';
 import styles from './ProductCardPrice.module.scss';
 
-const ProductCardPrice = ({ price }) => {
+const ProductCardPrice = ({ price, classes }) => {
     return (
         <>
-            <div className={styles.product_price}>${price.value}</div>
+            <div className={cn(styles.product_price, classes)}>${price.value}</div>
         </>
     );
 };

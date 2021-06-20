@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../components/Header';
+
 import ProductCard from '../../components/ProductCard';
 
 import styles from './ListProductsPage.module.scss';
@@ -24,7 +24,6 @@ const ListProductsPage = () => {
 
     return (
         <>
-            <Header />
             <main>
                 <div className={styles.products}>
                     {!!products ? (

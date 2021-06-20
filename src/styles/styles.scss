@@ -11,6 +11,10 @@ a {
     color: #323232;
 }
 
+* {
+    font-family: $font-family-main;
+}
+
 main {
     display: flex;
     justify-content: center;

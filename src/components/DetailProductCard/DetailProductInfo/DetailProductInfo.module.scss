@@ -1,0 +1,11 @@
+.product_info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+
+    @media screen and (max-width: 836px) {
+        height: -webkit-min-content;
+        height: -moz-min-content;
+        height: min-content;
+    }
+}

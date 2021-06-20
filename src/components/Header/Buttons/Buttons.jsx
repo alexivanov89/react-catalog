@@ -8,10 +8,10 @@ const Buttons = () => {
     return (
         <>
             <div className={styles.buttons}>
-                <a href='#'>
+                <a href='/cart'>
                     <Cart />
                 </a>
-                <a href='#'>
+                <a href='/account'>
                     <Account />
                 </a>
             </div>

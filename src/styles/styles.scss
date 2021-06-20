@@ -1,0 +1,23 @@
+@import 'fonts';
+@import 'colors';
+
+.hidden {
+    display: none !important;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    color: #323232;
+}
+
+* {
+    font-family: $font-family-main;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
+}
